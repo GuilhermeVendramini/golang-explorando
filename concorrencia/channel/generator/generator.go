@@ -19,7 +19,7 @@ func titulo(urls ...string) <-chan string {
 
 			r, _ := regexp.Compile("<title>(.*?)<\\/title>")
 			c <- r.FindStringSubmatch(string(html))[1] // index [1] é o valor
-		}(url) // passando a url como parametro para ela mesma
+		}(url) // passando a url como parametro
 	}
 
 	return c
